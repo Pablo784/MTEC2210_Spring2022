@@ -5,8 +5,8 @@ using UnityEngine;
 public class CarMovement : MonoBehaviour
 {
 
-    public float speed = 3.0f; 
-      
+    public float speed = 3.0f;
+
     void Update()
 
     {
@@ -25,16 +25,16 @@ public class CarMovement : MonoBehaviour
         float xDirection = Input.GetAxisRaw("Vertical");
 
         transform.position += transform.right * Time.deltaTime * speed;
+    }
 
 
-        
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall");
+        {
+            Destroy(gameObject);
 
-
-
-
-
-
-
+        }
 
     }
 
@@ -42,5 +42,13 @@ public class CarMovement : MonoBehaviour
 
 
 
+
+
 }
+
+
+
+
+
+
 
