@@ -35,6 +35,12 @@ public class CarMovement : MonoBehaviour
             Destroy(gameObject);
 
         }
+
+        if (collision.gameObject.tag == "Player")
+        {
+
+            Destroy(collision.gameObject);
+        }
     }
 }
        
