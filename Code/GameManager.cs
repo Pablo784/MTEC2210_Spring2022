@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         else
         {
             dirModifier = 1;
+            car.GetComponent<SpriteRenderer>().flipX = true;
         }
 
 
