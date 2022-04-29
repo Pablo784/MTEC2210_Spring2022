@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed = 5.0f;
+    public GameManager gameManager;
 
     // Update is called once per frame
     void Update()
@@ -22,11 +23,13 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(xMovement, yMovement, 0);
     }
 
-    private static void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Goal")
         {
             Debug.Log("Area Cleared");
+            gameManager.ReloadScene();
+
         }
     }
 }
